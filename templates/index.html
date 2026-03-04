@@ -19,26 +19,36 @@
                 <!-- contenedor del form -->
                 <div class="border rounded-3 p-2">
                     <form action="/guardar" method="post" autocomplete="off">
+                        {{forma.csrf_token}}
+                        <!-- id oculto -->
+                            {{forma.id}}
                         <!-- nombre -->
                          <div class="form-floating py-2">
-                            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
-                            <label for="nombre">Nombre</label>
+                            <!-- <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                            <label for="nombre">Nombre</label> -->
+                            {{ forma.nombre(class="form-control", placeholder="Nombre") }}
+                            {{forma.nombre.label}}
                          </div>
                         <!-- apellido -->
                          <div class="form-floating py-2">
-                            <input type="text" class="form-control" id="apellido" placeholder="Apellido">
-                            <label for="apellido">Apellido</label>
+                            <!-- <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+                            <label for="apellido">Apellido</label> -->
+                            {{ forma.apellido(class="form-control", placeholder="Apellido") }}
+                            {{forma.apellido.label}}
                          </div>
                         <!-- membresia -->
                          <div class="form-floating py-2">
-                            <input type="number" class="form-control" id="membresia" placeholder="Membresia">
-                            <label for="membresia">Membresia</label>
+                            <!-- <input type="number" class="form-control" id="membresia" placeholder="Membresia">
+                            <label for="membresia">Membresia</label> -->
+                            {{ forma.membresia(class="form-control", placeholder="Membresia") }}
+                            {{forma.membresia.label}}
                          </div>
 
                          <!-- botones -->
                           <div class="text-center py-2">
-                            <button type="submit" class="btn btn-success  me-3 rounded-pill" title="aaa">Guardar <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M16.59 7.58L10 14.17l-3.59-3.58L5 12l5 5l8-8zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8"/></svg></button>
-                            <button type="reset" class="btn btn-warning  rounded-pill">Limpiar <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m16.536 15.947l2.121-2.122l-3.182-3.182l3.536-3.535l-2.122-2.122l-3.535 3.536l-3.182-3.182L8.05 7.46zM13.354 5.693l2.828-2.828a1 1 0 0 1 1.414 0l3.536 3.536a1 1 0 0 1 0 1.414l-2.829 2.828l2.475 2.475a1 1 0 0 1 0 1.414L13 22.311a1 1 0 0 1-1.414 0l-9.9-9.9a1 1 0 0 1 0-1.414l7.779-7.778a1 1 0 0 1 1.414 0z"/></svg></button>
+                            <!-- <button type="submit" class="btn btn-success  me-3 rounded-pill" title="aaa">Guardar </button> -->
+                             {{ forma.guardar(class="btn btn-success  me-3 rounded-pill" ) }} 
+                            <a href="/limpiar" class="btn btn-warning  rounded-pill">Limpiar <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m16.536 15.947l2.121-2.122l-3.182-3.182l3.536-3.535l-2.122-2.122l-3.535 3.536l-3.182-3.182L8.05 7.46zM13.354 5.693l2.828-2.828a1 1 0 0 1 1.414 0l3.536 3.536a1 1 0 0 1 0 1.414l-2.829 2.828l2.475 2.475a1 1 0 0 1 0 1.414L13 22.311a1 1 0 0 1-1.414 0l-9.9-9.9a1 1 0 0 1 0-1.414l7.779-7.778a1 1 0 0 1 1.414 0z"/></svg></a>
                           </div>
                     </form> 
                 </div>
