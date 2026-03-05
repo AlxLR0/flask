@@ -2,11 +2,11 @@ from mysql.connector import pooling
 from mysql.connector import Error
 
 class Conexion:
-    host = '127.0.0.1'
-    port = 3307
-    user = 'root'
-    password = 'admin'
-    database = 'zona_fit_db'
+    host = ''
+    port = 0
+    user = ''
+    password = ''
+    database = ''
     pool_size = 5
     pool_name = 'zona_fit_pool'
     pool = None
